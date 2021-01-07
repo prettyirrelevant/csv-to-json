@@ -14,11 +14,11 @@ Make a POST request to [https://third-fluff-office.glitch.me/convert](https://th
 
 ```js
 {
-  "csv":{
-    "url":"https://linktocsv"
-    "select_fields":[],
-    "length": 100
-  }
+    "csv":{
+        "url":"https://linktocsv",
+            "select_fields":[],
+            "length": 100
+    }
 }
 ```
 
@@ -30,7 +30,7 @@ Sample request
 
 ```sh
 $ curl -H "Content-Type: application/json" \
-"https://third-fluff-office.glitch.me" -X POST \
+"https://third-fluff-office.glitch.me/convert" -X POST \
 -d '{"csv":{"url": "http://winterolympicsmedals.com/medals.csv", "select_fields":["Year", "City", "Sport"]}}'
 ```
 
