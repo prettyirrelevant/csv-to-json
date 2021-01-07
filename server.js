@@ -64,12 +64,14 @@ app.post("/convert", async (req, res) => {
     csv: { url, select_fields, length },
   } = reqData;
 
+  const csvRequest = await axios.get(url);
+
   //checks if url contains valid csv file
-  if (url.split("/").pop().split(".").pop() !== "csv") {
+  if (csvRequest.headers["content-type"] !== "text/csv") {
     res.status(400).send({ status: "error", message: "URL is not valid" });
   }
 
-  const csvRequest = await axios.get(url);
+  //parse csv file
   const stream = parse({
     headers: true,
     ignoreEmpty: true,
