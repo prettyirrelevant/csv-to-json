@@ -66,11 +66,8 @@ app.post("/convert", async (req, res) => {
 
   const csvRequest = await axios.get(url);
 
-  //checks if url contains valid csv file
-  if (
-    csvRequest.headers["content-disposition"].split("; ").pop().split() !==
-    "csv"
-  ) {
+  //checks if url contains valid csv file.
+  if (csvRequest.headers["content-disposition"].split(".").pop() !== 'csv"') {
     res.status(400).send({
       status: "error",
       message: "Url does not contain a valid CSV file",
