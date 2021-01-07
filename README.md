@@ -22,7 +22,7 @@ Make a POST request to [https://third-fluff-office.glitch.me/convert](https://th
 }
 ```
 
-**Note: If length is omitted or assigned to 0, all csv data will converted to json.**
+**Note: If `length` is omitted or assigned to 0, all csv data will converted to json.**
 
 ## Example
 
