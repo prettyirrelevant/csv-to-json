@@ -68,7 +68,12 @@ app.post("/convert", async (req, res) => {
 
   //checks if url contains valid csv file
   if (csvRequest.headers["content-type"] !== "text/csv") {
-    res.status(400).send({ status: "error", message: "URL is not valid" });
+    res
+      .status(400)
+      .send({
+        status: "error",
+        message: "Url does not contain a valid CSV file",
+      });
   }
 
   //parse csv file
